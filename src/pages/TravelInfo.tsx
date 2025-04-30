@@ -1,9 +1,10 @@
+import TravelInfoPage from "../components/TravelInfo"
 
 
 const TravelInfo = () => {
   return (
     <div>
-      TravelInfo
+      <TravelInfoPage/>
     </div>
   )
 }
