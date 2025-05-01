@@ -5,6 +5,7 @@ import AppRoutes from './components/AppRoutes'
 import Header from './components/Header'
 
 import Footer from './components/Footer'
+import HomePage from './pages/Home'
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
     <div>
       <Header/>
       <NavBar/>
+      
       
 
       <AppRoutes/>
