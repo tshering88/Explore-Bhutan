@@ -1,9 +1,10 @@
+import Culture from "../components/Culture"
 
 
 const CuturalFestival = () => {
   return (
     <div>
-      CuturalFestival
+      <Culture/>
     </div>
   )
 }
