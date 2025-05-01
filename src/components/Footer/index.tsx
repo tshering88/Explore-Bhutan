@@ -33,9 +33,9 @@ const Footer = () => {
   return (
     <Box bg="green" color="white">
       <Container maxW="6xl" py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} gap={8}>
           {/* Branding */}
-          <Stack spacing={3}>
+          <Stack gap={3}>
             <Heading fontSize="lg" color="yellow">
               Explore Bhutan
             </Heading>
@@ -44,12 +44,12 @@ const Footer = () => {
 
           {/* Dynamic Link Sections */}
           {footerSections.map(({ heading, links }) => (
-            <Stack key={heading} align="flex-start" spacing={1}>
+            <Stack key={heading} align="flex-start" gap={1}>
               <Text fontWeight="600" mb={2}>
                 {heading}
               </Text>
               {links.map((link) => (
-                <Link key={link} href="#" _hover={{ textDecoration: "underline" }}>
+                <Link key={link} href="#" _hover={{ textDecoration: "underline" }} color={'whiteAlpha.800'} >
                   {link}
                 </Link>
               ))}
@@ -57,23 +57,19 @@ const Footer = () => {
           ))}
 
           {/* Contact & Social */}
-          <Stack align="flex-start" spacing={1}>
+          <Stack align="flex-start" gap={1}>
             <Text fontWeight="600" mb={2}>
               Contact
             </Text>
             <Text fontSize="sm">Tsirang, Bhutan</Text>
             <Text fontSize="sm">info@explorebhutan.com</Text>
             <Text fontSize="sm">+975 17368936 / 77310335</Text>
-            <Stack direction="row" spacing={3} mt={2}>
-              {socialLinks.map(({ label, icon, href }) => (
+            <Stack direction="row" gap={3} mt={2}>
+              {socialLinks.map(({ label, icon,}) => (
                 <Link
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                   aria-label={label}              
                 >
-                  <Icon as={icon} boxSize={5} color="black" />
+                  <Icon as={icon} boxSize={5} color="white" />
                 </Link>
               ))}
             </Stack>
