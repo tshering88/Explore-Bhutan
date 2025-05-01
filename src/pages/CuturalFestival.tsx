@@ -1,11 +1,19 @@
+import { Box } from "@chakra-ui/react"
+import AccordionSection from "../components/AccordionSection"
 import Culture from "../components/Culture"
+import Festivals from "../components/Festivals"
+import VideoSection from "../components/videoSection"
+
 
 
 const CuturalFestival = () => {
   return (
-    <div>
+    <Box w={'90%'} mx={'auto'}>
       <Culture/>
-    </div>
+      <Festivals/>
+      <AccordionSection/>
+      <VideoSection/>
+    </Box>
   )
 }
 

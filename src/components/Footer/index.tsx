@@ -4,52 +4,59 @@ import {
   Container,
   Stack,
   Text,
-  Link,
   Icon,
   SimpleGrid,
   Heading,
+  Image,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link  } from "react-router-dom";
 
 // Reusable link section data
 const footerSections = [
-  {
-    heading: "Quick Links",
-    links: ["Home", "Destinations", "Tours", "Blog", "Contact"],
-  },
+ 
   {
     heading: "Services",
-    links: ["Cultural Tours", "Trekking", "Visa Assistance", "Travel Insurance"],
+    links: ["Cultural", "Trekking", "Visa Assistance", "Travel Insurance"],
   },
 ];
-
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebook, href: "#" },
-  { label: "Instagram", icon: FaInstagram, href: "#" },
-  { label: "Twitter", icon: FaTwitter, href: "#" },
+  { label: "Facebook", icon: FaFacebook, href: "https://facebook.com" },
+  { label: "Instagram", icon: FaInstagram, href: "https://instagram.com" },
+  { label: "Twitter", icon: FaTwitter, href: "https://twitter.com" },
 ];
 
 const Footer = () => {
   return (
-    <Box bg="green" color="white">
-      <Container maxW="6xl" py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+    <Box bg="green" color="white" justifyContent={'space-around'}>
+      <Container py={4}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} >
           {/* Branding */}
-          <Stack spacing={3}>
+          <Stack wordSpacing={3}>
+            <Box textAlign={'center'} alignSelf={'center'}>
             <Heading fontSize="lg" color="yellow">
               Explore Bhutan
             </Heading>
-            <Text fontSize="sm">Discover the Kingdom of Happiness.</Text>
+            <Image rounded={'md'} boxSize={'150px'} borderRadius={'full'} fit={'cover'} alt='logo'
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Emblem_of_the_Prime_Minister_of_Bhutan.png"  />
+           
+            </Box>
           </Stack>
 
           {/* Dynamic Link Sections */}
           {footerSections.map(({ heading, links }) => (
-            <Stack key={heading} align="flex-start" spacing={1}>
+            <Stack key={heading} align="flex-start" gap={1}>
               <Text fontWeight="600" mb={2}>
                 {heading}
               </Text>
               {links.map((link) => (
-                <Link key={link} href="#" _hover={{ textDecoration: "underline" }}>
+                <Link
+                  key={link}
+                 className="footerlink"
+                  to={link}
+                  
+                 
+                >
                   {link}
                 </Link>
               ))}
@@ -57,23 +64,17 @@ const Footer = () => {
           ))}
 
           {/* Contact & Social */}
-          <Stack align="flex-start" spacing={1}>
+          <Stack align="flex-start" gap={1}>
             <Text fontWeight="600" mb={2}>
               Contact
             </Text>
             <Text fontSize="sm">Tsirang, Bhutan</Text>
             <Text fontSize="sm">info@explorebhutan.com</Text>
             <Text fontSize="sm">+975 17368936 / 77310335</Text>
-            <Stack direction="row" spacing={3} mt={2}>
+            <Stack direction="row" gap={3} mt={2}>
               {socialLinks.map(({ label, icon, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon as={icon} boxSize={5} color="black" />
+                <Link key={label} to={href}  aria-label={label} className="footerlink">
+                  <Icon as={icon} boxSize={8} color="white" />
                 </Link>
               ))}
             </Stack>
@@ -83,7 +84,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <Box py={4}>
-        <Text fontSize="sm" textAlign="center">
+        <Text fontSize="sm" textAlign="center" fontWeight={'bold'} pb={'8'}>
           &copy; {new Date().getFullYear()} Explore Bhutan. All rights reserved.
         </Text>
       </Box>
