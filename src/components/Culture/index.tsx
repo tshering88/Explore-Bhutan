@@ -5,11 +5,12 @@ const Culture = () => {
   return (
     <Center>
     <Card.Root width="98%" flexDirection="row" overflow="hidden" padding='8px' marginTop={'32px'} px={'6px'} >
-        <Image 
+        <Image  loading="lazy" 
          src={culture}
          alt="Atsara"
          aspectRatio={4 / 3}
-         width="300px"/>
+         width="300px"
+         />
          <Box>
         <Card.Body gap='2'>
         

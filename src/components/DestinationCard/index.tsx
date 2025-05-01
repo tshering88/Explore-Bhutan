@@ -16,7 +16,7 @@ const DestinationCard = () => {
         flexDirection="column"
         p={4}
    >
-  <Image
+  <Image  loading="lazy"
        src="https://www.tourmyindia.com/blog//wp-content/uploads/2022/10/Best-Places-to-Visit-in-Bhutan-Tourism.jpg"
        alt="Paro Taktsang Monastery in Bhutan"
      />
@@ -51,7 +51,7 @@ const DestinationCard = () => {
         flexDirection="column"
         p={4}
       >
-        <Image
+        <Image  loading="lazy"
           src="src/assets/Buddha-Dordenma-.jpg"
           alt="Buddha-Dordenma"
         />
@@ -76,7 +76,7 @@ const DestinationCard = () => {
         flexDirection="column"
         p={4}
       >
-        <Image
+        <Image  loading="lazy"
           src="src/assets/PUNAKH1.jpg"
           alt="punakha Dzong"
         />

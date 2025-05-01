@@ -26,7 +26,7 @@ const WeatherWidget = () => (
           </List.Root>
         </Box>
         <Box flex="1" display="flex" justifyContent="center" alignItems="center">
-          <Image
+          <Image  loading="lazy"
             src="https://www.esikkimtourism.in/bhutan/wp-content/uploads/2019/11/haa-valley-in-june-boxx.jpg"
             alt="Spring in Bhutan"
             mt={2}

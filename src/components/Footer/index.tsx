@@ -37,7 +37,7 @@ const Footer = () => {
             <Heading fontSize="lg" color="yellow">
               Explore Bhutan
             </Heading>
-            <Image rounded={'md'} boxSize={'150px'} borderRadius={'full'} fit={'cover'} alt='logo'
+            <Image  loading="lazy" rounded={'md'} boxSize={'150px'} borderRadius={'full'} fit={'cover'} alt='logo'
             src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Emblem_of_the_Prime_Minister_of_Bhutan.png"  />
            
             </Box>

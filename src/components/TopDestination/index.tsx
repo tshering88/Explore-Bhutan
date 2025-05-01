@@ -48,7 +48,7 @@ const TopDestination = () => {
             bg="white"
           >
             <Box flex="1">
-              <Image
+              <Image  loading="lazy"
                 src={place.img}
                 alt={place.name}
                 objectFit="cover"
