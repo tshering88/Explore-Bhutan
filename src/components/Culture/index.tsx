@@ -4,7 +4,7 @@ import culture from '../../assets/culture.jpeg'
 const Culture = () => {
   return (
     <Center>
-    <Card.Root width="80%" flexDirection="row" overflow="hidden" padding='8px' marginTop={'32px'} >
+    <Card.Root width="98%" flexDirection="row" overflow="hidden" padding='8px' marginTop={'32px'} px={'6px'} >
         <Image 
          src={culture}
          alt="Atsara"
