@@ -4,42 +4,47 @@ import {
   Container,
   Stack,
   Text,
-  Link,
+  
   Icon,
   SimpleGrid,
   Heading,
+  Image,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link  } from "react-router-dom";
 
 // Reusable link section data
 const footerSections = [
-  {
-    heading: "Quick Links",
-    links: ["Home", "Destinations", "Tours", "Blog", "Contact"],
-  },
+ 
   {
     heading: "Services",
-    links: ["Cultural Tours", "Trekking", "Visa Assistance", "Travel Insurance"],
+    links: ["Cultural", "Trekking", "Visa Assistance", "Travel Insurance"],
   },
 ];
 
+
+
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebook, href: "#" },
-  { label: "Instagram", icon: FaInstagram, href: "#" },
-  { label: "Twitter", icon: FaTwitter, href: "#" },
+  { label: "Facebook", icon: FaFacebook, href: "https://facebook.com" },
+  { label: "Instagram", icon: FaInstagram, href: "https://instagram.com" },
+  { label: "Twitter", icon: FaTwitter, href: "https://twitter.com" },
 ];
 
 const Footer = () => {
   return (
-    <Box bg="green" color="white">
-      <Container maxW="6xl" py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} gap={8}>
+    <Box bg="green" color="white" justifyContent={'space-around'}>
+      <Container py={10}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spaceX={10} >
           {/* Branding */}
-          <Stack gap={3}>
+          <Stack wordSpacing={3}>
+            <Box textAlign={'center'} alignSelf={'center'}>
             <Heading fontSize="lg" color="yellow">
               Explore Bhutan
             </Heading>
-            <Text fontSize="sm">Discover the Kingdom of Happiness.</Text>
+            <Image rounded={'md'} boxSize={'150px'} borderRadius={'full'} fit={'cover'} alt='logo'
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Emblem_of_the_Prime_Minister_of_Bhutan.png"  />
+           
+            </Box>
           </Stack>
 
           {/* Dynamic Link Sections */}
@@ -49,7 +54,13 @@ const Footer = () => {
                 {heading}
               </Text>
               {links.map((link) => (
-                <Link key={link} href="#" _hover={{ textDecoration: "underline" }} color={'whiteAlpha.800'} >
+                <Link
+                  key={link}
+                 
+                  to={link}
+                  // _hover={{ textDecoration: "underline" }}
+                  // color="whiteAlpha.800"
+                >
                   {link}
                 </Link>
               ))}
@@ -65,10 +76,8 @@ const Footer = () => {
             <Text fontSize="sm">info@explorebhutan.com</Text>
             <Text fontSize="sm">+975 17368936 / 77310335</Text>
             <Stack direction="row" gap={3} mt={2}>
-              {socialLinks.map(({ label, icon,}) => (
-                <Link
-                   aria-label={label}              
-                >
+              {socialLinks.map(({ label, icon, href }) => (
+                <Link key={label} href={href} isExternal aria-label={label}>
                   <Icon as={icon} boxSize={5} color="white" />
                 </Link>
               ))}
