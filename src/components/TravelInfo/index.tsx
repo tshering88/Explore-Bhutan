@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -6,13 +6,12 @@ import {
   Text,
   List,
   ListItem,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
   Center,
+  Flex,
+  CardRoot,
+  Image,
 } from '@chakra-ui/react';
+import { FaChevronDown } from 'react-icons/fa';
 
 // ========== TypeScript Interfaces ==========
 
@@ -29,8 +28,14 @@ interface WeatherWidgetProps {
   weatherData: string;
 }
 
+interface FAQItem {
+  question: string;
+  answer: string;
+  imageUrl?: string;
+}
+
 interface FAQAccordionProps {
-  faqItems: { question: string; answer: string }[];
+  faqItems: FAQItem[];
 }
 
 interface PackingTipsListProps {
@@ -46,7 +51,7 @@ const VisaInfoSection: React.FC<VisaInfoProps> = ({
   dailyFee,
   tips,
 }) => (
-  <Box mb={8}>
+  <CardRoot mb={8} p={4} w={'10/12'}>
     <Heading size="lg" mb={2}>
       Visa Information for {country}
     </Heading>
@@ -58,13 +63,13 @@ const VisaInfoSection: React.FC<VisaInfoProps> = ({
     </Text>
     <Box>
       <Text fontWeight="semibold" mb={2}>Travel Tips:</Text>
-      <List spacing={2}>
+      <List.Root spaceX={2}>
         {tips.map((tip, index) => (
           <ListItem key={index}>{tip}</ListItem>
         ))}
-      </List>
+      </List.Root>
     </Box>
-  </Box>
+  </CardRoot>
 );
 
 // WeatherWidget Component
@@ -73,57 +78,109 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({
   season,
   weatherData,
 }) => (
-  <Box mb={8}>
+  <CardRoot mb={8} p={4} w={'10/12'}>
     <Heading size="lg" mb={2}>
       Weather in {region} during {season}
     </Heading>
-    <List spacing={2} mt={2}>
+    <List.Root spaceX={2} mt={2}>
       {weatherData.split('\n').map((line, index) => (
         <ListItem key={index}>{line.replace(/^- /, '')}</ListItem>
       ))}
-    </List>
-  </Box>
+    </List.Root>
+    <Image
+      src="https://www.esikkimtourism.in/bhutan/wp-content/uploads/2019/11/haa-valley-in-june-boxx.jpg"
+      alt={`Spring in ${region}`}
+      mt={4}
+      borderRadius="md"
+      maxW="50%"
+      objectFit="cover"
+      
+    />
+  </CardRoot>
 );
 
 // FAQAccordion Component
-const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqItems }) => (
-  <Box mb={8}>
-    <Heading size="lg" mb={4}>
-      Frequently Asked Questions
-    </Heading>
-    <Accordion allowToggle>
-      {faqItems.map((item, index) => (
-        <AccordionItem key={index} border="1px solid" borderColor="gray.200" borderRadius="md" mb={2}>
-          <AccordionButton px={4} py={2}>
-            <Box flex="1" textAlign="left" fontWeight="semibold">
-              {item.question}
+const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqItems }) => {
+  const [openIndices, setOpenIndices] = useState<number[]>([]);
+
+  const toggleItem = (index: number) => {
+    setOpenIndices(prev =>
+      prev.includes(index)
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  return (
+    <Box mb={8} p={4} w={'10/12'}>
+      <Heading size="lg" mb={4}>
+        Frequently Asked Questions
+      </Heading>
+      <Box>
+        {faqItems.map((item, index) => {
+          const isOpen = openIndices.includes(index);
+          return (
+            <Box
+              key={index}
+              border="1px solid"
+              borderColor="gray.200"
+              borderRadius="md"
+              mb={2}
+              p={4}
+            >
+              <h2>
+                <Flex
+                  onClick={() => toggleItem(index)}
+                  justifyContent="space-between"
+                  alignItems="center"
+                  px={4}
+                  py={2}
+                >
+                  <Box textAlign="left" fontWeight="semibold">
+                    {item.question}
+                  </Box>
+                  <Box
+                    transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
+                    transition="transform 0.3s ease"
+                  >
+                    <FaChevronDown />
+                  </Box>
+                </Flex>
+              </h2>
+              <Box pb={4}>
+                <Text>{item.answer}</Text>
+                {item.imageUrl && (
+                  <Image
+                    src={item.imageUrl}
+                    alt="Currency image"
+                    boxSize="50%"
+                    borderRadius="10px"
+                    mt={4}
+                    objectFit="cover"
+                  />
+                )}
+              </Box>
             </Box>
-            <AccordionIcon />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            <Text>{item.answer}</Text>
-          </AccordionPanel>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  </Box>
-);
+          );
+        })}
+      </Box>
+    </Box>
+  );
+};
 
 // PackingTipsList Component
 const PackingTipsList: React.FC<PackingTipsListProps> = ({ tips }) => (
-  <Box mb={8}>
+  <CardRoot mb={8} p={4} w={'10/12'}>
     <Heading size="lg" mb={2}>
       Packing Tips
     </Heading>
-    <List spacing={2} mt={2}>
+    <List.Root mt={2} px={8}>
       {tips.map((tip, index) => (
         <ListItem key={index}>{tip}</ListItem>
       ))}
-    </List>
-  </Box>
+    </List.Root>
+  </CardRoot>
 );
-
-// ========== Main Page ==========
 
 const TravelInfoPage: React.FC = () => {
   return (
@@ -136,7 +193,7 @@ const TravelInfoPage: React.FC = () => {
         <VisaInfoSection
           country="Bhutan"
           visaProcess="Apply online through the official Bhutan-Visas portal. After submission, schedule a biometric appointment at your local consulate or visa center."
-          dailyFee="1000 for short stays (up to 90 days)"
+          dailyFee="The daily Sustainable Development Fee (SDF) for tourist travel in Bhutan is $100 per person per night for non-Indian nationals. Children between 6 and 12 years old pay half the fee ($50 per day), and children under 5 are exempt."
           tips={[
             'Apply at least 4 weeks before travel.',
             'Carry printouts of hotel bookings and travel insurance.',
@@ -151,7 +208,8 @@ const TravelInfoPage: React.FC = () => {
 - Average temperatures range from 12°C to 18°C, making it pleasantly cool.
 - The valleys come alive with blooming rhododendrons and other wildflowers.
 - Expect occasional light rain, especially in April, so packing a light waterproof jacket and umbrella is advisable.
-- Days are generally sunny with clear skies, ideal for trekking and sightseeing in places like Paro, Thimphu, and Punakha.`}
+- Days are generally sunny with clear skies, ideal for trekking and sightseeing in places like Paro, Thimphu, and Punakha.`
+}
         />
 
         <FAQAccordion
@@ -165,6 +223,8 @@ const TravelInfoPage: React.FC = () => {
               question: "What's the local currency?",
               answer:
                 'Bhutan uses the Ngultrum (Nu). Credit cards are accepted in many areas, but cash is recommended for rural travel.',
+              imageUrl:
+                'https://www.dailybhutan.com/pub_files/01070001363473/the-history-of-money-in-bhutan_8526.jpg', // Image URL
             },
             {
               question: 'Is tap water safe to drink?',
@@ -186,6 +246,9 @@ const TravelInfoPage: React.FC = () => {
             'Include comfortable walking shoes.',
             'Carry a reusable water bottle.',
             'Download offline maps or a translation app.',
+            'Pack Light – Stick to essentials; use packing cubes for better organization.',
+            'Carry a First Aid Kit – Include medications, band-aids, and motion sickness tablets.',
+            'Bring Power Adapters & Chargers – Check plug types for the destination country.',
           ]}
         />
       </Container>
