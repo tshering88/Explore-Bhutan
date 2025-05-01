@@ -1,9 +1,12 @@
+import DestinationCard from "../components/DestinationCard"
+import DestinationPage from "../components/DestinationPage"
 
 
-const Destination = () => {
+function Destination() {
   return (
     <div>
-      Destination
+      <DestinationPage />
+      <DestinationCard/>
     </div>
   )
 }
