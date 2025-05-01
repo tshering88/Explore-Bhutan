@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom'
-import TravelInfo from './pages/TravelInfo.tsx'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ChakraProvider value = {defaultSystem}>
