@@ -4,7 +4,6 @@ import {
   Container,
   Stack,
   Text,
-  
   Icon,
   SimpleGrid,
   Heading,
@@ -21,9 +20,6 @@ const footerSections = [
     links: ["Cultural", "Trekking", "Visa Assistance", "Travel Insurance"],
   },
 ];
-
-
-
 const socialLinks = [
   { label: "Facebook", icon: FaFacebook, href: "https://facebook.com" },
   { label: "Instagram", icon: FaInstagram, href: "https://instagram.com" },
@@ -33,8 +29,8 @@ const socialLinks = [
 const Footer = () => {
   return (
     <Box bg="green" color="white" justifyContent={'space-around'}>
-      <Container py={10}>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spaceX={10} >
+      <Container py={4}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} >
           {/* Branding */}
           <Stack wordSpacing={3}>
             <Box textAlign={'center'} alignSelf={'center'}>
@@ -56,10 +52,10 @@ const Footer = () => {
               {links.map((link) => (
                 <Link
                   key={link}
-                 
+                 className="footerlink"
                   to={link}
-                  // _hover={{ textDecoration: "underline" }}
-                  // color="whiteAlpha.800"
+                  
+                 
                 >
                   {link}
                 </Link>
@@ -77,8 +73,8 @@ const Footer = () => {
             <Text fontSize="sm">+975 17368936 / 77310335</Text>
             <Stack direction="row" gap={3} mt={2}>
               {socialLinks.map(({ label, icon, href }) => (
-                <Link key={label} href={href} isExternal aria-label={label}>
-                  <Icon as={icon} boxSize={5} color="white" />
+                <Link key={label} to={href}  aria-label={label} className="footerlink">
+                  <Icon as={icon} boxSize={8} color="white" />
                 </Link>
               ))}
             </Stack>
@@ -88,7 +84,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <Box py={4}>
-        <Text fontSize="sm" textAlign="center">
+        <Text fontSize="sm" textAlign="center" fontWeight={'bold'} pb={'8'}>
           &copy; {new Date().getFullYear()} Explore Bhutan. All rights reserved.
         </Text>
       </Box>
