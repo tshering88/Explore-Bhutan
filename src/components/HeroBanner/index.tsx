@@ -10,15 +10,14 @@ const HeroBanner = () => {
           position="center"
           height="100vh"
           display="flex"
-          alignItems="center top"
+          alignItems="center"
           justifyContent="center"
           color="black"
           textAlign="center"
           px={4}
         >
           <VStack gap={4} >
-            <Heading fontSize={["3xl", "3xl", "3xl"]}>Explore Bhutan</Heading>
-            <Text fontSize={["md", "lg", "xl"]}>"Where beauty meets peace".</Text>
+        
             <Heading textAlign={'center'} fontSize={["3xl", "4xl", "6xl"]} color={'white'}>Explore Bhutan</Heading>
             <Text fontSize={["md", "lg", "xl"]} color={'white'}>Where beauty meets peace.</Text>
           </VStack>
