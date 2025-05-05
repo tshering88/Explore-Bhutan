@@ -5,6 +5,8 @@ import {
   Input,
   Stack,
   Textarea,
+  Heading,
+  Text,
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -40,21 +42,23 @@ const ContactForm = () => {
   };
 
   return (
-    <Box minH="100vh" p={5} mb="30px" w='100%' maxW="2000px"   h='150px'>
-      <Center h="100%">
-        <Box
-          bg="whiteAlpha.900"
-          border="1px solid"
-          borderColor="black"
-          borderRadius="lg"
-          p="6"
-          maxW="md"
-          w="full"
-       height={"1/2"}
-        >
+    <Box minH="100vh" bg="gray.50" py={10} px={4}>
+      <Center>
+        <Box maxW="600px" w="full" bg="white" boxShadow="lg" borderRadius="xl" p={8}>
+          <Heading size="lg" textAlign="center" mb={4}>
+            Get in Touch
+          </Heading>
+          <Text textAlign="center" fontSize="md" color="gray.600" mb={6}>
+            We'd love to hear from you! Fill out the form below and we'll get back to you shortly.
+          </Text>
+
           <form ref={formRef} onSubmit={sendEmail}>
             <Stack gap={4}>
-              <Input name="user_name" placeholder="Your Name" required />
+              <Input
+                name="user_name"
+                placeholder="Your Name"
+                required
+              />
               <Input
                 name="user_email"
                 type="email"
@@ -64,11 +68,11 @@ const ContactForm = () => {
               <Textarea
                 name="message"
                 placeholder="Your Message"
+                rows={6}
                 required
-                rows={8}
               />
-              <Button type="submit" colorPalette="green">
-                Submit
+              <Button type="submit" bg="green" size="lg">
+                Send Message
               </Button>
             </Stack>
           </form>

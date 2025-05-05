@@ -1,5 +1,5 @@
 import { Box, Center, Heading, Icon, Stack, Text } from "@chakra-ui/react"
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
+
 import { LuPhone } from "react-icons/lu"
 import { MdEmail, MdLocationOn } from "react-icons/md"
 
