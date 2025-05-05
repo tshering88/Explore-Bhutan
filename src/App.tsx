@@ -1,4 +1,4 @@
-
+import { ToastContainer } from 'react-toastify'
 import NavBar from './components/NavBar'
 import AppRoutes from './components/AppRoutes'
 
@@ -19,6 +19,8 @@ const App = () => {
       <AppRoutes/>
 
       <Footer/>
+
+      <ToastContainer position='bottom-right' autoClose={5000}/>
 
     </div>
   )
