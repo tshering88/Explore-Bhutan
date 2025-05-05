@@ -1,11 +1,14 @@
 
 import { Route, Routes } from 'react-router-dom'
 
+
+import Destination from '../../pages/Destination'
 import CuturalFestival from '../../pages/CuturalFestival'
 import TravelInfo from '../../pages/TravelInfo'
 import Home from '../../pages/Home'
+
 import Contact from '../../pages/Contact'
-import Destination from '../../pages/Destination'
+
 
 
 const AppRoutes = () => {

@@ -1,11 +1,33 @@
+import React, { useState } from 'react';
+
+import {
+  Container,
+  Heading,
+  Center,
+} from '@chakra-ui/react';
 
 
-const TravelInfo = () => {
+
+import VisaInfoSection from '../components/VisaInfoSection';
+import WeatherWidget from '../components/WeatherWidget';
+import FAQAccordion from '../components/FAQAAccordion';
+
+const TravelInfoPage: React.FC = () => {
   return (
-    <div>
-      TravelInfo
-    </div>
-  )
-}
+    <Center bg="gray.50" minH="100vh" px={4}>
+      <Container maxW="container.md" py={10} bg="white" boxShadow="md" borderRadius="lg" my={'4'}>
+        <Heading size="3xl" fontWeight="bold" mb={10} textAlign="center">
+          Travel Info
+        </Heading>
 
-export default TravelInfo
+        <VisaInfoSection
+          
+        />
+        <WeatherWidget/>
+        <FAQAccordion/>
+      </Container>
+    </Center>
+  );
+};
+
+export default TravelInfoPage;

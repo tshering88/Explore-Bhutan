@@ -59,7 +59,7 @@ const Festivals = () => {
       {festivals.map((festival) => (
         <CardRoot key={festival.name} borderWidth="1px" borderRadius="lg" boxShadow="md">
           <CardHeader>
-            <Image
+            <Image  loading="lazy"
               src={festival.image}
               alt={festival.name}
               objectFit="cover"
