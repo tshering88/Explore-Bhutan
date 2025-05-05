@@ -1,0 +1,7 @@
+.footerlink {
+  color: azure;
+  
+}
+.footerlink:hover {
+  text-decoration: underline;
+}

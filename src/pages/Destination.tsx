@@ -1,9 +1,13 @@
 
+import DestinationPage from "../components/DestinationPage"
+import FilterDestinations from "../components/FilterBar"
 
-const Destination = () => {
+
+function Destination() {
   return (
     <div>
-      Destination
+      <DestinationPage />
+      <FilterDestinations/>
     </div>
   )
 }
