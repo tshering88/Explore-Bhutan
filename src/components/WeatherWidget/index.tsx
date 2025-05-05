@@ -33,6 +33,7 @@ const WeatherWidget = () => (
             borderRadius="md"
             maxW="80%"
             objectFit="cover"
+          
           />
         </Box>
       </Flex>

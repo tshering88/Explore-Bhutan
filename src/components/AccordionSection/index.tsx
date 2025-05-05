@@ -34,9 +34,7 @@ const AccordionSection = () => {
     <Box  m={'auto'}>
         
     <Stack p={4}>
-      <Heading >
-        Bhutan's Culture, Etiquette and Religion.
-        </Heading>
+      
 
       <AccordionRoot 
       multiple defaultValue= {['b']}

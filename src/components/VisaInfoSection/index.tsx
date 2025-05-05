@@ -1,5 +1,5 @@
-import { Box, Heading, Text, List, ListItem, Card } from '@chakra-ui/react';
-
+import { Box, Heading, Text, List, ListItem, Card, Image, Flex } from '@chakra-ui/react';
+import visa from '../../assets/visa.png'
 const tips = [
     
     'Carry printouts of hotel bookings and travel insurance.',
@@ -13,12 +13,13 @@ const tips = [
   
 
 const VisaInfoSection = () => (
-    <Card.Root m={'4'}>
-  <Box mb={8} p={4} w={'10/12'}>
+    <Card.Root m={'4'} p={4}>
+      <Flex direction={{ base: 'column', md: 'row' }} gap={4}>
+  <Box flex={1}>
     <Heading size="lg" mb={2}>
       Visa Information for Bhutan
     </Heading>
-    <Text mb={1}>
+    <Text mb={4}>
       <Text as="span" fontWeight="semibold">Visa Process:</Text> <br/> Apply online through the official Bhutan-Visas portal. 
       After submission, schedule a biometric appointment at your local consulate or visa center
     </Text>
@@ -27,13 +28,17 @@ const VisaInfoSection = () => (
     </Text>
     <Box>
       <Text fontWeight="semibold" mb={2}>Travel Tips:</Text>
-      <List.Root m={'4'}>
+      <List.Root spaceX={2} pl={4}>
         {tips.map((tip, index) => (
           <ListItem key={index}>{tip}</ListItem>
         ))}
       </List.Root>
     </Box>
-  </Box>
+    </Box>
+
+    
+  
+  </Flex>
   </Card.Root>
 );
 

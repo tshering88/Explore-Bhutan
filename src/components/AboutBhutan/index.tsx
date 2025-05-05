@@ -1,4 +1,4 @@
-import { Box, CardRoot, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, CardRoot, Heading, SimpleGrid, Text } from '@chakra-ui/react'
 
 
 const AboutBhutan = () => {
@@ -6,12 +6,12 @@ const AboutBhutan = () => {
     <CardRoot>
     <Box bg="gray.100" py={12} px={4}>
             <Box maxW="auto" mx="auto" textAlign="center">
-              <Text fontSize="3xl" fontWeight="semibold" mb={8}>
+              <Heading size={'3xl'} fontWeight={'bold'} mb={8}>
                 The Heart of Bhutan
-              </Text>
+              </Heading>
               <SimpleGrid columns={{ base: 1, md: 3 }} spaceX={8}>
                 <Box>
-                  <Text fontSize="xl" fontWeight="bold" mb={2}>
+                  <Text fontSize="md" fontWeight="bold" mb={2}>
                     Culture
                   </Text>
                   <Text>
@@ -19,7 +19,7 @@ const AboutBhutan = () => {
                   </Text>
                 </Box>
                 <Box>
-                  <Text fontSize="xl" fontWeight="bold" mb={2}>
+                  <Text fontSize="md" fontWeight="bold" mb={2}>
                     Nature
                   </Text>
                   <Text>
@@ -27,7 +27,7 @@ const AboutBhutan = () => {
                   </Text>
                 </Box>
                 <Box>
-                  <Text fontSize="xl" fontWeight="bold" mb={2}>
+                  <Text fontSize="md" fontWeight="bold" mb={2}>
                     Happiness
                   </Text>
                   <Text>
