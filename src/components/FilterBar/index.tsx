@@ -1,14 +1,12 @@
 import { useState, ChangeEvent } from "react";
-import {
-  Box,
-  Text,
-  Image,
-  VStack,
-  Heading,
-  Flex,
-  Input,
-  Link,
-} from "@chakra-ui/react";
+import {Box, Text, Image, VStack, Heading, Flex, Input, Link, } from "@chakra-ui/react";
+import buddhadordenma from '../../assets/buddhadordenma.jpg'
+import punakhaa from '../../assets/punakhaa.jpg'
+import wangduephodrangdzong from '../../assets/wangduephodrangdzong.jpg'
+import phobjikha from '../../assets/phobjikha.jpg'
+import bumthanga from '../../assets/bumthanga.jpg'
+import notfound from '../../assets/notfound.webp'
+
 
 interface Destination {
   title: string;
@@ -30,34 +28,34 @@ const destinations: Destination[] = [
   },
   {
     title: "Buddha Dordenma",
-    image: "src/assets/buddhadordenma.jpg", 
+    image: buddhadordenma, 
     description:
       "Siddhartha Gautama, most commonly referred to as the Buddha, was a wandering ascetic and religious teacher.",
     region: "Western",
   },
   {
     title: "Punakha Dzong",
-    image: "src/assets/PUNAKH1.jpg",
+    image: punakhaa,
     description:
       "The Punakha Dzong is the administrative centre of Punakha District and one of its most majestic structures.",
     region: "Western",
   },
   {
     title: "Wangdue Phodrang Dzong",
-    image: "src/assets/wangdue-phodrang-Dzong.jpg",
+    image: wangduephodrangdzong ,
     description: "Wangdue Phodrang District is a dzongkhag of central Bhutan.",
     region: "Central",
   },
   {
     title: "Phobjikha Valley",
-    image: "src/assets/phobjikha.jpg",
+    image: phobjikha,
     description:
       "The Phobjikha Valley is a vast U-shaped valley in central Bhutan, home to Gangteng Monastery.",
     region: "Central",
   },
   {
     title: "Bumthang",
-    image: "src/assets/bumthang.jpg",
+    image: bumthanga,
     description:
       "Bumthang is the spiritual heartland of Bhutan with many sacred sites and monasteries.",
     region: "Central",
@@ -66,7 +64,7 @@ const destinations: Destination[] = [
 
 const noInfoDestination: Destination = {
   title: "No Destination Found",
-  image: "src/assets/notfound.webp",
+  image: notfound,
   description: "We couldn't find any destinations matching your search.",
   region: "N/A",
 };
