@@ -1,12 +1,13 @@
-import DestinationCard from "../components/DestinationCard"
+
 import DestinationPage from "../components/DestinationPage"
+import FilterDestinations from "../components/FilterBar"
 
 
 function Destination() {
   return (
     <div>
       <DestinationPage />
-      <DestinationCard/>
+      <FilterDestinations/>
     </div>
   )
 }
