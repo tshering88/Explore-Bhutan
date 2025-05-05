@@ -49,7 +49,7 @@ const Testimonials = () => {
   return (
     <Box  py={12}  w={'100%'}>
       <Box>
-        <Text fontSize="3xl" fontWeight="bold" mb={10} textAlign="center" color="teal.600">
+        <Text fontSize="3xl" fontWeight="bold" mb={10} textAlign="center" color="black">
           What Travelers Say
         </Text>
 

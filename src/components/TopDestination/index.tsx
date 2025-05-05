@@ -25,7 +25,7 @@ const destinations = [
 ];
 
 const TopDestination = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  
 
   return (
     <Box p={4}>
@@ -33,7 +33,7 @@ const TopDestination = () => {
         Top Destinations
       </Text>
 
-      <Stack spacing={6}>
+      <Stack spaceX={6}>
         {destinations.map((place, idx) => (
           <Flex
             key={idx}
