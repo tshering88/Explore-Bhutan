@@ -1,20 +1,24 @@
-import { Box, Card, Center, Image } from "@chakra-ui/react"
+import { Box, Card, CardTitle, Center, Heading, Image } from "@chakra-ui/react"
 import culture from '../../assets/culture.jpeg'
 
 const Culture = () => {
   return (
+    
     <Center>
+      
     <Card.Root width="98%" flexDirection="row" overflow="hidden" padding='8px' marginTop={'32px'} px={'6px'} >
+       
         <Image  loading="lazy" 
          src={culture}
          alt="Atsara"
          aspectRatio={4 / 3}
          width="300px"
          />
+         
          <Box>
         <Card.Body gap='2'>
         
-      <Card.Title style={{textAlign: 'left'}}>Cultural and Festivals</Card.Title>
+      <Heading style={{textAlign: 'left'}}>Cultural and Festivals</Heading>
       <Card.Description style={{textAlign: 'justify', lineHeight: '30px'}}>
       Bhutan's culture is deeply intertwined with
        its vibrant festivals, especially the religious 

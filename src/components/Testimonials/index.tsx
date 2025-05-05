@@ -38,10 +38,7 @@ const testimonials = [
       name: "Chloe from France",
       quote: "The breathtaking views and untouched beauty made it my favorite destination ever.",
     },
-    {
-      name: "Noah from USA",
-      quote: "Bhutan is where I learned what real happiness looks like.",
-    }
+    
   ];
 
 const Testimonials = () => {
@@ -49,7 +46,7 @@ const Testimonials = () => {
   return (
     <Box  py={12}  w={'100%'}>
       <Box>
-        <Text fontSize="3xl" fontWeight="bold" mb={10} textAlign="center" color="teal.600">
+        <Text fontSize="3xl" fontWeight="bold" mb={10} textAlign="center">
           What Travelers Say
         </Text>
 

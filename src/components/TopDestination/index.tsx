@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Text, useBreakpointValue, Flex } from '@chakra-ui/react';
+import { Box, Image, Stack, Text, useBreakpointValue, Flex, Heading } from '@chakra-ui/react';
 import parotaktshang from '../../assets/parotaktshang.jpg';
 import punakhavalley from '../../assets/punakhavalley.jpg';
 import thim from '../../assets/thim.jpg';
@@ -29,11 +29,11 @@ const TopDestination = () => {
 
   return (
     <Box p={4}>
-      <Text fontSize="3xl" fontWeight="semibold" mb={8} textAlign="center">
+      <Heading fontSize="3xl" fontWeight="bold" my={16} textAlign="center">
         Top Destinations
-      </Text>
+      </Heading>
 
-      <Stack spacing={6}>
+      <Stack spaceX={6}>
         {destinations.map((place, idx) => (
           <Flex
             key={idx}
@@ -57,7 +57,7 @@ const TopDestination = () => {
               />
             </Box>
             <Box p={6} flex="1" display="flex" flexDirection="column" justifyContent="center">
-              <Text fontSize="2xl" fontWeight="bold" mb={2}>
+              <Text fontSize="md" fontWeight="bold" mb={2}>
                 {place.name}
               </Text>
               <Text fontSize="md" color="gray.700" lineHeight="1.6">
