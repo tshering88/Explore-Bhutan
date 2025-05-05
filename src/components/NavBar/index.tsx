@@ -1,4 +1,4 @@
-import { Box, Flex, Stack, Link } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 const navLink = [

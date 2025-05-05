@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Text, useBreakpointValue, Flex, Heading } from '@chakra-ui/react';
+import { Box, Image, Stack, Text, Flex, Heading } from '@chakra-ui/react';
 import parotaktshang from '../../assets/parotaktshang.jpg';
 import punakhavalley from '../../assets/punakhavalley.jpg';
 import thim from '../../assets/thim.jpg';

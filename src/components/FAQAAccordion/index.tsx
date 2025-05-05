@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; // Correct import for useState
-import { Box, Heading, Text, Flex, Image, CardRoot } from '@chakra-ui/react';
+import { useState } from 'react'; // Correct import for useState
+import { Box, Heading, Text, Flex, CardRoot } from '@chakra-ui/react';
 import { FaChevronDown } from 'react-icons/fa';
 
 const faqItems = [

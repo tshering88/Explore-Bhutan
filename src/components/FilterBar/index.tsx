@@ -29,8 +29,8 @@ const destinations: Destination[] = [
     link: "https://en.wikipedia.org/wiki/Paro_Taktsang",
   },
   {
-    title: "Buddha-Dordenma",
-    image: "src/assets/Buddha-Dordenma-.jpg", 
+    title: "Buddha Dordenma",
+    image: "src/assets/buddhadordenma.jpg", 
     description:
       "Siddhartha Gautama, most commonly referred to as the Buddha, was a wandering ascetic and religious teacher.",
     region: "Western",
