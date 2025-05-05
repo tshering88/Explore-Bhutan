@@ -11,29 +11,22 @@ const navLink = [
 
 const NavBar = () => {
   return (
-    <Box bg={'green.500'} p="5">
+    <Box bg="green" p={5}>
       <Flex justify="center">
         <Stack direction="row" spaceX={9}>
           {navLink.map((nav) => (
-            <Link
-              as={NavLink}
+            <NavLink
               to={nav.path}
-              color={'white'}
-              fontWeight={'bold'}
-              _hover={{
-                color: "yellow",
-                textDecoration: "underline",
-
-              }}
-              _activeLink={{
-                fontWeight: "bold",
-                textDecoration: "underline",
-                color: "yellow.200",
-              }}
               key={nav.path}
+              style={({ isActive }) => ({
+                fontWeight: 'bold',
+                color: isActive ? 'white' : 'yellow',
+                textDecoration: isActive ? 'underline' : 'none',
+              })}
+              end // important for "/" route to not match all
             >
               {nav.name}
-            </Link>
+            </NavLink>
           ))}
         </Stack>
       </Flex>

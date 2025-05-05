@@ -46,7 +46,7 @@ const Footer = () => {
           {/* Dynamic Link Sections */}
           {footerSections.map(({ heading, links }) => (
             <Stack key={heading} align="flex-start" gap={1}>
-              <Text fontWeight="600" mb={2}>
+              <Text fontWeight="600" mb={2} color={'yellow'}>
                 {heading}
               </Text>
               {links.map((link) => (
@@ -65,12 +65,12 @@ const Footer = () => {
 
           {/* Contact & Social */}
           <Stack align="flex-start" gap={1}>
-            <Text fontWeight="600" mb={2}>
+            <Text fontWeight="600" mb={2} color={'yellow'}>
               Contact
             </Text>
             <Text fontSize="sm">Tsirang, Bhutan</Text>
             <Text fontSize="sm">info@explorebhutan.com</Text>
-            <Text fontSize="sm">+975 17368936 / 77310335</Text>
+            <Text fontSize="sm">+975 17123456 / 77123456</Text>
             <Stack direction="row" gap={3} mt={2}>
               {socialLinks.map(({ label, icon, href }) => (
                 <Link key={label} to={href}  aria-label={label} className="footerlink">
@@ -84,7 +84,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <Box py={4}>
-        <Text fontSize="sm" textAlign="center" fontWeight={'bold'} pb={'8'}>
+        <Text color='#FFA500' fontSize='xl' textAlign="center" fontWeight={'bold'} pb={'8'}>
           &copy; {new Date().getFullYear()} Explore Bhutan. All rights reserved.
         </Text>
       </Box>

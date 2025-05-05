@@ -1,4 +1,4 @@
-import { Box, Card, CardTitle, Center, Heading, Image } from "@chakra-ui/react"
+import { Box, Card, Center, Heading, Image } from "@chakra-ui/react"
 import culture from '../../assets/culture.jpeg'
 
 const Culture = () => {

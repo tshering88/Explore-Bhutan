@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {
   Container,
@@ -17,7 +17,7 @@ const TravelInfoPage: React.FC = () => {
     <Center bg="gray.50" minH="100vh" px={4}>
       <Container maxW="container.md" py={10} bg="white" boxShadow="md" borderRadius="lg" my={'4'}>
         <Heading size="3xl" fontWeight="bold" mb={10} textAlign="center">
-          Travel Info
+          Travel Information
         </Heading>
 
         <VisaInfoSection
